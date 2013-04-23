@@ -12,6 +12,19 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 		GreetingService {
 
 	public String greetServer(String input) throws IllegalArgumentException {
+		String str = new String();
+		//Se verifica si el usuario existe
+		if(AccesoBD.crearConexion())
+		{
+			Long consulta = (Long) AccesoBD.selectEscalar("count(*)", "Usuarios", "Username='"+input+"'");
+			if(consulta!= null && consulta <= 0)
+				return "Bad login name. Usuarios con el nombre "+input+": "+consulta.toString();
+			else
+				str = "Good login name. Usuarios con el nombre "+input+": "+consulta.toString();
+		}
+		else
+			return "Imposible conectar con la base de datos. Contacte con su administrador";
+		
 		// Verify that the input is valid. 
 		if (!FieldVerifier.isValidName(input)) {
 			// If the input is not valid, throw an IllegalArgumentException back to
@@ -27,7 +40,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 		input = escapeHtml(input);
 		userAgent = escapeHtml(userAgent);
 
-		return "Hello, " + input + "!<br><br>I am running " + serverInfo
+		return str + "<br>Hello, " + input + "!<br><br>I am running " + serverInfo
 				+ ".<br><br>It looks like you are using:<br>" + userAgent;
 	}
 

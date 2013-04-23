@@ -22,7 +22,7 @@ import com.google.gwt.event.dom.client.FocusEvent;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class ComentariosGWT implements EntryPoint {
+public class Comentariosgwt implements EntryPoint {
 	/**
 	 * The message displayed to the user when the server cannot be reached or
 	 * returns an error.
