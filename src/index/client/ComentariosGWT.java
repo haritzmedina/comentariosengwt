@@ -16,11 +16,13 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.event.dom.client.FocusHandler;
+import com.google.gwt.event.dom.client.FocusEvent;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class Comentariosgwt implements EntryPoint {
+public class ComentariosGWT implements EntryPoint {
 	/**
 	 * The message displayed to the user when the server cannot be reached or
 	 * returns an error.
@@ -40,8 +42,15 @@ public class Comentariosgwt implements EntryPoint {
 	 */
 	public void onModuleLoad() {
 		final Button sendButton = new Button("Send");
+		sendButton.setText("Login");
 		final TextBox nameField = new TextBox();
-		nameField.setText("GWT User");
+		nameField.addFocusHandler(new FocusHandler() {
+			public void onFocus(FocusEvent event) {
+				if(nameField.getText().compareTo("Username")==0)
+					nameField.setText("");
+			}
+		});
+		nameField.setText("Username");
 		final Label errorLabel = new Label();
 
 		// We can add style names to widgets
@@ -49,12 +58,20 @@ public class Comentariosgwt implements EntryPoint {
 
 		// Add the nameField and sendButton to the RootPanel
 		// Use RootPanel.get() to get the entire body element
-		RootPanel.get("nameFieldContainer").add(nameField);
-		RootPanel.get("sendButtonContainer").add(sendButton);
+		RootPanel rootPanel = RootPanel.get("nameFieldContainer");
+		rootPanel.add(nameField, 10, 10);
+		nameField.setSize("153px", "22px");
+		RootPanel.get("sendButtonContainer").add(sendButton, 58, 103);
 		RootPanel.get("errorLabelContainer").add(errorLabel);
 
 		// Focus the cursor on the name field when the app loads
 		nameField.setFocus(true);
+		
+		TextBox txtbxPassword = new TextBox();
+		txtbxPassword.setText("Password");
+		txtbxPassword.setFocus(true);
+		rootPanel.add(txtbxPassword, 10, 50);
+		txtbxPassword.setSize("153px", "22px");
 		nameField.selectAll();
 
 		// Create the popup dialog box
