@@ -7,18 +7,13 @@
 
   <!-- Servlets -->
   <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>index.server.GreetingServiceImpl</servlet-class>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>index.server.Login</servlet-class>
   </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/comentariosgwt/greet</url-pattern>
-  </servlet-mapping>
   
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>Comentariosgwt.html</welcome-file>
+    <welcome-file>Login.html</welcome-file>
   </welcome-file-list>
 
 </web-app>
