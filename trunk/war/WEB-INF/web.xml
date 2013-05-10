@@ -11,6 +11,11 @@
     <servlet-class>index.server.Login</servlet-class>
   </servlet>
   
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/comentariosgwt/logService</url-pattern>
+  </servlet-mapping>
+  
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>Login.html</welcome-file>

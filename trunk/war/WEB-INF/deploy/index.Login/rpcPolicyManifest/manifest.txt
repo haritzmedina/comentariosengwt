@@ -1,2 +1,0 @@
-# Module index.Login
-# RPC service class, partial path of RPC policy file
