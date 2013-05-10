@@ -22,7 +22,6 @@ public class AccesoBD {
         try {
         	Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 			return false;
 		}		
@@ -30,7 +29,6 @@ public class AccesoBD {
 		try {
 			conn = DriverManager.getConnection(url+db, user, pass);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}
@@ -55,7 +53,6 @@ public class AccesoBD {
 		try {
 			s = conn.createStatement();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
@@ -73,7 +70,6 @@ public class AccesoBD {
 		try {
 			return s.executeQuery(sql);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
@@ -96,7 +92,6 @@ public class AccesoBD {
 		try {
 			s = conn.createStatement();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
@@ -115,7 +110,6 @@ public class AccesoBD {
 		try {
 			 rs = s.executeQuery(sql);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
@@ -124,7 +118,6 @@ public class AccesoBD {
 				return rs.getObject(1);
 			return null;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}

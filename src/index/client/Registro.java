@@ -9,7 +9,6 @@ public class Registro implements EntryPoint {
 
 	@Override
 	public void onModuleLoad() {
-		// TODO Auto-generated method stub
 		RootPanel rootPanel = RootPanel.get("registerContainer");
 		rootPanel.setSize("100%", "100%");
 		
