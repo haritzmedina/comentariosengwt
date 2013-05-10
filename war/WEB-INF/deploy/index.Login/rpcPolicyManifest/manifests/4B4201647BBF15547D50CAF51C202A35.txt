@@ -1,2 +1,0 @@
-serviceClass: index.client.LoginService
-path: E954B811538D18AE6134CEB71F865E9D.gwt.rpc
