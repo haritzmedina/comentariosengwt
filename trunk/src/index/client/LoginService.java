@@ -6,7 +6,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 /**
  * The client side stub for the RPC service.
  */
-@RemoteServiceRelativePath("greet")
+@RemoteServiceRelativePath("loginService")
 public interface LoginService extends RemoteService {
 	Integer login(String name, String pass) throws IllegalArgumentException;
 }

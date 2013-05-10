@@ -11,7 +11,8 @@ public class Login extends RemoteServiceServlet implements
 		LoginService {
 
 	public Integer login(String user, String pass) throws IllegalArgumentException {
-		String str = new String();
+		user = escapeHtml(user);
+		pass = escapeHtml(pass);
 		//Se verifica si el usuario existe
 		if(AccesoBD.crearConexion())
 		{
