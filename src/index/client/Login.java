@@ -1,5 +1,8 @@
 package index.client;
 
+import index.client.services.LoginService;
+import index.client.services.LoginServiceAsync;
+
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -95,30 +98,9 @@ public class Login implements EntryPoint {
 		});
 		
 		
-		
-		// Create a handler for the sendButton and nameField
-		class MyHandler implements ClickHandler, KeyUpHandler {
-			/**
-			 * Fired when the user clicks on the sendButton.
-			 */
+		//Añadimos el evento de hacer click
+		buttonLogin.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
-				sendNameToServer();
-			}
-
-			/**
-			 * Fired when the user types in the nameField.
-			 */
-			public void onKeyUp(KeyUpEvent event) {
-				if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
-					sendNameToServer();
-				}
-			}
-
-			/**
-			 * Send the name from the nameField to the server and wait for a response.
-			 */
-			private void sendNameToServer() {
-				
 				loginService.login(textBoxUsername.getText(), textBoxPassword.getText(), new AsyncCallback<Integer>() {
 
 					@Override
@@ -147,14 +129,8 @@ public class Login implements EntryPoint {
 					}
 					
 				});
-			} 
-					
-			}
 
-		// Add a handler to send the name to the server
-		MyHandler handler = new MyHandler();
-		buttonLogin.addClickHandler(handler);
-		textBoxUsername.addKeyUpHandler(handler);
-		textBoxPassword.addKeyUpHandler(handler);
+			}
+		});
 	}
 }

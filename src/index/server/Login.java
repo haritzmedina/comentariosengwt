@@ -1,6 +1,7 @@
 package index.server;
 
-import index.client.LoginService;
+import index.client.services.LoginService;
+
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
