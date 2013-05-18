@@ -12,14 +12,9 @@
   </servlet>
   
   <servlet-mapping>
-    <servlet-name>loginServlet</servlet-name>
+    <servlet-name>login</servlet-name>
     <url-pattern>/login/logService</url-pattern>
   </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>registerServlet</servlet-name>
-  	<servlet-class>index.server.Registro</servlet-class>
-  </servlet>
   
   <!-- Default page to serve -->
   <welcome-file-list>
