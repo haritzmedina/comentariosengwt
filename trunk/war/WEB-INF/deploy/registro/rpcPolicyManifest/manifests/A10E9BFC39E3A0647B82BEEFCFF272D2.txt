@@ -1,0 +1,2 @@
+serviceClass: index.client.services.RegistroService
+path: 6E43C04809DD71D1D3067AFB0870B4F2.gwt.rpc
